@@ -5,6 +5,11 @@ var gameHasStarted = false;
 var level = 0;
 
 $(".btn").click(function() {
+  if (!gameHasStarted) {
+    gameHasStarted = true;
+    nextSequence();
+    return;
+  }
   var userChosenColor = this.id;
   userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
